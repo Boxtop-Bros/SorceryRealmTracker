@@ -3,8 +3,8 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1710995947|3414502412";
-const CACHE_PREFIX = "RealmTracker-sw-cache-";
+const CACHE_VERSION = "1710997848|367997956";
+const CACHE_PREFIX = "RealmTracker43te-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "index.offline.html";
 // Files that will be cached on load.
@@ -22,7 +22,7 @@ self.addEventListener("activate", (event) => {
 		function (keys) {
 			// Remove old caches.
 			return Promise.all(keys.filter(key => key.startsWith(CACHE_PREFIX) && key != CACHE_NAME).map(key => caches.delete(key)));
-		}).then(function() {
+		}).then(function () {
 			// Enable navigation preload if available.
 			return ("navigationPreload" in self.registration) ? self.registration.navigationPreload.enable() : Promise.resolve();
 		})
